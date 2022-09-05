@@ -1,0 +1,8 @@
+---
+
+yaml-files:
+  - 'tasks/main.yml'
+
+rules:
+  truthy:
+    allowed-values: ['true', 'false', 'yes', 'no']
