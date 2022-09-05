@@ -2,6 +2,7 @@ galaxy_info:
   author: Chris Smithson
   description: Used to push a modified version of the picool fan conroll app to independent RPI
   company: Smithsonite.net
+  role_name: picool
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
