@@ -25,11 +25,11 @@
     group: root
     mode: u=rwxr,g=r,o=x
   with_items:
-    - src: ~/git/picool/picool/fancontrol.py
+    - src: ~/git/picool/fancontrol.py
       dest: /usr/local/bin/fancontrol.py
-    - src: ~/git/picool/picool/requirements.txt
+    - src: ~/git/picool/requirements.txt
       dest: /home/ansible/picool/
-    - src: ~/git/picool/picool/fancontrol.sh
+    - src: ~/git/picool/fancontrol.sh
       dest: /etc/init.d/fancontrol.sh
 
 - name: Install picool requirements
