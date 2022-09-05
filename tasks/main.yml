@@ -1,8 +1,14 @@
 ---
+- name: Create a directory for picool if it does not exist
+  ansible.builtin.file:
+    path: ~/picool/git
+    state: directory
+    mode: '0755'
+  become: false
 - name: Check out the Picool repo
   ansible.builtin.git:
     repo: https://github.com/Smithsonite/picool.git
-    dest: /git/picool/
+    dest: ~/picool/git
     version: main
   become: false
 
@@ -19,11 +25,11 @@
     group: root
     mode: u=rwxr,g=r,o=x
   with_items:
-    - src: /git/picool/fancontrol.py
+    - src: ~/picool/git/picool/fancontrol.py
       dest: /usr/local/bin/fancontrol.py
-    - src: /git/picool/requirements.txt
+    - src: ~/picool/git/picool/requirements.txt
       dest: /home/ansible/picool/
-    - src: /git/picool/fancontrol.sh
+    - src: ~/picool/git/picool/fancontrol.sh
       dest: /etc/init.d/fancontrol.sh
 
 - name: Install picool requirements
