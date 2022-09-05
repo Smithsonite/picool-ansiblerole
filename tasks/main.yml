@@ -8,7 +8,7 @@
 - name: Check out the Picool repo
   ansible.builtin.git:
     repo: https://github.com/Smithsonite/picool.git
-    dest: ~/picool/git
+    dest: ~/git/picool
     version: main
   become: false
 
