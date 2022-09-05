@@ -19,17 +19,17 @@
 
 - name: Copy fancontrol files
   ansible.builtin.copy:
-    remote_src: "{{ item.src }}"
+    remote_src: "{{ item.remote_src }}"
     dest: "{{ item.dest }}"
     owner: root
     group: root
     mode: u=rwxr,g=r,o=x
   with_items:
-    - src: /home/ansible/git/picool/fancontrol.py
+    - remote_src: /home/ansible/git/picool/fancontrol.py
       dest: /usr/local/bin/fancontrol.py
-    - src: /home/ansible/git/picool/requirements.txt
+    - remote_src: /home/ansible/git/picool/requirements.txt
       dest: /home/ansible/picool/
-    - src: /home/ansible/git/picool/fancontrol.sh
+    - remote_src: /home/ansible/git/picool/fancontrol.sh
       dest: /etc/init.d/fancontrol.sh
 
 - name: Install picool requirements
